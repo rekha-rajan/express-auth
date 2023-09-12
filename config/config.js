@@ -4,6 +4,7 @@ require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 
 module.exports={
     port:process.env.PORT,
+    secretkey: process.env.JWT_SECRET,
     database:{
         dbport:process.env.DB_PORT,
         dbhost:process.env.HOST,

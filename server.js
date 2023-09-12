@@ -12,6 +12,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 const authRoute = require('./routes/authRoute.js');
+const userRouter = require('./routes/userRoute.js');
 
 sequelize.authenticate()
 .then(() => {
@@ -22,6 +23,7 @@ sequelize.authenticate()
 });
 
 app.use('/user', authRoute);
+app.use('/test', userRouter);
 app.listen(config.port, ()=>{
     console.log(`server is listening  on ${config.port}`);
 });
