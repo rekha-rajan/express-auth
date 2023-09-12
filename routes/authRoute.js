@@ -9,5 +9,5 @@ const {insertUser} = require("../controllers/authController");
 
 //User Sign up
 authRouter.post("/signup", userValidationRules(), validate, insertUser);
-
+ 
 module.exports = authRouter;

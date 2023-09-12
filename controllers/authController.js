@@ -1,16 +1,16 @@
 const db = require('../config/db');
-const config=require('../config/config')
+const config = require('../config/config')
 const bcrypt=require('bcrypt');  
-const User = db.users;
-const Role=db.role;
+const User = db.Users;
+const Role= db.Role;
 const Op = db.Sequelize.Op;
 
 module.exports = {
    insertUser
 };
  
-async function  insertUser(req,res) {
-  const {email,password,roles}=req.body;
+async function  insertUser(req, res) {
+  const {email, password, roles} = req.body;
   await User.create({
     email: email,
     password: bcrypt.hashSync(password, 8)
